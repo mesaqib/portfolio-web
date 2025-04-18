@@ -6,6 +6,11 @@ body {
   margin: 0;
 }
 
+::selection {
+  background-color: orange;
+  color: white;
+}
+
 /* HTML BODY START HERE */
 
 /* fonts */
@@ -91,8 +96,8 @@ body {
 
 #page1 #cursor {
   position: fixed;
-  height: 7.5vw;
-  width: 7.5vw;
+  height: 1vw;
+  width: 1vw;
   border-radius: 50%;
   background-color: #ff5f38 !important;
   /* z-index: 11; */
@@ -104,92 +109,326 @@ body {
   font-size: 1.2vw;
   z-index: 9;
 }
+#cursor {
+  z-index: -1;
+}
 
 #page2 {
   height: 100vh;
   padding: 50px 0px;
   overflow: hidden;
 }
-#page2 h2{
-     /* font-family: rejoice; */
-    font-size: 20vw;
-    white-space: nowrap;
-    letter-spacing: -5px;
+#page2 h2 {
+  /* font-family: rejoice; */
+  font-size: 20vw;
+  white-space: nowrap;
+  letter-spacing: -5px;
+}
+#page2 .projects {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding-left: 300px;
 }
 
-
-
-
-
 #page3 {
-  height: 150vh;
+  height: 110vh;
   background-color: rgb(255, 217, 127);
   overflow: hidden;
-   display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
-#page3 .zoom-out h3{
-    font-family: rejoice;
-   font-size: 15vw;
-   font-weight: 900;
+#page3 .zoom-out h3 {
+  font-family: rejoice;
+  font-size: 15vw;
+  font-weight: 900;
 }
-
 
 #page4 {
   height: 100vh;
   background-color: rgb(255, 217, 127);
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+}
+#page4 .content {
+  width: 60%;
+  margin-inline: auto;
+  text-align: center;
+} 
+
+/* #page5{
+ background-color: rgb(227, 172, 104);
+ height: 200vh;
+ width: 100%;
+ padding-top: 100px;
 }
 
+#page5 .content{
+  width: 80%;
+  margin-inline: auto;
+  background-color: rgb(184, 67, 67);
+  height: 50vh;
+}
 
+.content1{
+  position: absolute;
+  top: 10%;
+} */
+
+/* 
 #page5{
-    height: 150vh;
-    width: 100%;
-    background-color: antiquewhite;
-     position: relative;
+  position: relative;
+  height: 150vh;
+  background-color: red;
 }
-#page5 .card{
-     margin-top: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 5vw;
-    height: 80vh;
-    width: 80vw;
-    background-color: #ff5f38;
-    border-radius: 30px;
 
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, 0%);
+#page5 .card{
+  position: absolute;
+  top: 8%;
+  left: 10%;
+  height: 70vh;
+  width: 80%;
+  border-radius: 20px;
+  margin-inline: auto;
+  background-color: aquamarine;
+}
+
+#page6{
+  background-color: yellow;
+  height: 300vh;
 }
 
 #page5 .card1{
-    top: 0%;
-    background-color: #fff;
+  background-color: rgb(149, 27, 84);
+} */
+
+
+.cards {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: repeat(var(--cards-count), var(--card-height));
+  gap: 40px 0;
+}
+.card {
+  position: sticky;
+  top: 5%;
+  height: 60vh;
+  transform-origin: center;
+  border-radius: 30px;
+  padding: 40px 10px;
+  
+}
+.card1{
+  transform: rotate(5deg);
+  background-color: rgb(167, 245, 219);
+  box-shadow: 1px 2px 18px 3px rgb(167, 245, 219);
+
+}
+.card2{
+  transform: rotate(-5deg);
+  background-color: rgb(248, 228, 165);
+  box-shadow: 1px 2px 18px 3px rgb(248, 228, 165);
+}
+.card3{
+  transform: rotate(5deg);
+  background-color: rgb(244, 195, 166);
+  box-shadow: 1px 2px 18px 3px rgb(244, 195, 166);
 }
 
-#page5 .card2{
-    top: 60%;
-    background-color: #b9b9b9;
-    
+.card1 .content{
+  transform: rotate(-5deg);
 }
-#page5 .card3{
-    top: 120%;
-    background-color: #979797;
-    
+.card2 .content{
+  transform: rotate(5deg);
+}
+.card3 .content{
+  transform: rotate(-5deg);
+}
+
+.card__inner {
+  will-change: transform;
+  background: white;
+  border-radius: 14px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px hsla(265.3, 20%, 10%, 35%);
+  transform-origin: center top;
 }
 
 
 
+.card__image-container {
+  display: flex;
+  width: 40%;
+  flex-shrink: 0;
+}
 
-#page6{
-    height: 150vh;
+
+.space {
+  height: 90vh;
+}
+
+
+@media (max-width: 600px) {
+  .card__inner {
+    flex-direction: column;
+  }
+
+  .card__image-container {
     width: 100%;
-    background-color: rgb(209, 153, 79);
-     position: relative;
+  }
+
+  .card__image {
+    aspect-ratio: 16 / 9;
+  }
+
+  .card__title {
+    font-size: 32px;
+  }
+
+  .card__description {
+    font-size: 16px;
+  }
+
+  .card__content {
+    padding: 30px 20px;
+  }
+}
+
+
+.experience-section {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 20px;
+  max-width: 800px;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.experience-section h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.experience-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+}
+
+.experience-card h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  color: #222;
+}
+
+.duration {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.experience-card ul {
+  padding-left: 1.25rem;
+}
+
+.experience-card li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+
+.skills-section {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+  border-radius: 30px;
+}
+
+.skills-section h3 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+  
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.skill {
+  padding: 15px 20px;
+  background: #fff;
+  border: 2px solid #ececec;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.skill:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.space .contact{
+  padding-top: 100px;
+}
+
+
+.contact-section {
+  padding: 80px 10%;
+  background-color: #f5f5f5;
+  color: #1a1a1a;
+  border-radius: 20px;
+  margin: 80px auto;
+  max-width: 1000px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.contact-section h3 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.contact-desc {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.contact-info a {
+  color: #0077ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #0056b3;
 }
