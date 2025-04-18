@@ -1,0 +1,195 @@
+html {
+  box-sizing: border-box;
+}
+body {
+  font-family: defaultt !important;
+  margin: 0;
+}
+
+/* HTML BODY START HERE */
+
+/* fonts */
+
+@font-face {
+  font-family: defaultt;
+  src: url(../assets/NBInternational.ttf);
+}
+@font-face {
+  font-family: rejoice;
+  src: url(../assets/Rejouice-Headline.ttf);
+}
+
+#loader {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: #ff5f38;
+  z-index: 111;
+  font-weight: 900;
+  font-size: 10vw;
+  font-stretch: extra-expanded;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: rejoice;
+}
+
+.main {
+  min-height: 100vh;
+}
+#page1 {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+#page1 video {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+#page1 nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 3vw 3vw;
+  position: relative;
+  z-index: 13;
+}
+#page1 nav .logo {
+  font-size: 1.4vw;
+  color: #fff;
+}
+#page1 nav .menu {
+  font-size: 1.2vw;
+}
+
+#page1 .content {
+  position: relative;
+  /* background-color: #000000; */
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  color: #fff;
+
+  /* display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; */
+}
+#page1 .content h1 {
+  font-family: rejoice;
+  font-size: 26.5vw;
+  text-align: center;
+  font-weight: 100;
+  line-height: 24.5vw;
+  margin: 0;
+  padding: 0;
+  margin-top: 16vw;
+}
+
+#page1 #cursor {
+  position: fixed;
+  height: 7.5vw;
+  width: 7.5vw;
+  border-radius: 50%;
+  background-color: #ff5f38 !important;
+  /* z-index: 11; */
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2vw;
+  z-index: 9;
+}
+
+#page2 {
+  height: 100vh;
+  padding: 50px 0px;
+  overflow: hidden;
+}
+#page2 h2{
+     /* font-family: rejoice; */
+    font-size: 20vw;
+    white-space: nowrap;
+    letter-spacing: -5px;
+}
+
+
+
+
+
+#page3 {
+  height: 150vh;
+  background-color: rgb(255, 217, 127);
+  overflow: hidden;
+   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#page3 .zoom-out h3{
+    font-family: rejoice;
+   font-size: 15vw;
+   font-weight: 900;
+}
+
+
+#page4 {
+  height: 100vh;
+  background-color: rgb(255, 217, 127);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#page5{
+    height: 150vh;
+    width: 100%;
+    background-color: antiquewhite;
+     position: relative;
+}
+#page5 .card{
+     margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5vw;
+    height: 80vh;
+    width: 80vw;
+    background-color: #ff5f38;
+    border-radius: 30px;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+#page5 .card1{
+    top: 0%;
+    background-color: #fff;
+}
+
+#page5 .card2{
+    top: 60%;
+    background-color: #b9b9b9;
+    
+}
+#page5 .card3{
+    top: 120%;
+    background-color: #979797;
+    
+}
+
+
+
+
+#page6{
+    height: 150vh;
+    width: 100%;
+    background-color: rgb(209, 153, 79);
+     position: relative;
+}
